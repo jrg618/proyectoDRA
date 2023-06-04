@@ -1,0 +1,83 @@
+li {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: 900;
+  padding-top: 2rem;
+}
+
+div {
+  padding-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 900;
+  padding-right: 1rem;
+}
+
+.example-form-field {
+  width: 300px;
+  padding-top: 1rem;
+}
+
+input {
+  display: flex;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 15px;
+}
+
+.mensaje {
+  flex-grow: 50;
+  flex-shrink: 0;
+  width: 50rem;
+  height: 40px;
+  font-size: 15px;
+
+}
+
+.entero {
+  padding: 0;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  width: 18rem;
+  justify-content: space-between;
+}
+
+button span {
+  flex-grow: 1;
+  text-align: left;
+}
+
+img {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.cuerpo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+textarea {
+  font-size: 25px;
+  margin-right: 3rem;
+}
+
+.guardar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}

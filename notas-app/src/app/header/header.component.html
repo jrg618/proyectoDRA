@@ -1,0 +1,18 @@
+<mat-toolbar>
+    <span>{{title}}</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/4021/4021693.png" width="64" height="64" alt="Notas" title="Notas">
+
+    <button mat-stroked-button routerLink="/dashboard">Inicio</button>
+
+    <button mat-stroked-button routerLink="/notas">Mis Notas</button>
+
+
+
+    <div *ngIf="weatherData">
+        <p>Tiempo en Almería:</p>
+        <p>Temperatura: {{ weatherData.temperature }}</p>
+        <p>Viento: {{ weatherData.wind }}</p>
+        <p>Cielo: {{
+            weatherData.description }}</p>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,33 @@
+<div *ngIf="nota" class="entero">
+  <h2>{{nota.name}}</h2>
+  <div class="cuerpo">
+    <div>
+      <label for="nota-name">Modificar nombre: </label>
+      <input id="nota-name" [(ngModel)]="nota.name" placeholder="nota name" />
+      <br>
+      <label>Agregar anotación: </label>
+      <input type="text" [(ngModel)]="textoCampo" class="mensaje" (keyup)="handleKeyPress($event, textoCampo)">
+      <br>
+      <label>Modificar anotación</label>
+      <ul>
+        <li *ngFor="let mensajes of nota?.mensajes">
+          <button type="button" (click)="seleccionarMensaje(mensajes)">{{mensajes.name | slice:0:15}} <img
+              src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" width="48" height="48" alt="Borrar nota"
+              title="Borrar nota" (click)="eliminarMensaje(mensajes.name)"></button>
+
+        </li>
+      </ul>
+    </div>
+    <div class="derecha">
+      <textarea *ngIf="mensajeSeleccionado" [(ngModel)]="mensajeSeleccionado.name" rows="10"
+        cols="40">{{ mensajeSeleccionado }}</textarea>
+
+    </div>
+  </div>
+
+  <div class="guardar">
+    <button type="button" (click)="goBack()">Cancelar</button>
+
+    <button type="button" (click)="updateNota()">Guardar</button>
+  </div>
+</div>

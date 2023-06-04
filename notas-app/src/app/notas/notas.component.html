@@ -1,0 +1,22 @@
+<h2>Mis Notas</h2>
+
+<div>
+  <label>Añadir nueva nota: </label><br>
+
+  <mat-form-field class="example-form-field">
+    <mat-label>Nombre de la nota</mat-label>
+    <input matInput type="text" [(ngModel)]="textoCampo" (keyup)="handleKeyPress($event, textoCampo)">
+    <boton *ngIf="textoCampo" matSuffix mat-icon-button aria-label="Clear" (click)="textoCampo=''">
+      <mat-icon>close</mat-icon>
+    </boton>
+  </mat-form-field>
+</div>
+
+<ul>
+  <li *ngFor="let nota of notas">
+    <button mat-stroked-button routerLink="/detail/{{nota.id}}">{{nota.name | slice:0:15}}</button>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" width="48" height="48" alt="Borrar nota"
+      title="Borrar nota" (click)="delete(nota)" style="cursor: pointer;">
+  </li>
+</ul>

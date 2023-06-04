@@ -1,0 +1,6 @@
+<h2>Notas recientes</h2>
+<div class="heroes-menu">
+  <a *ngFor="let nota of notas" routerLink="/detail/{{nota.id}}">
+    {{nota.name}}
+  </a>
+</div>
