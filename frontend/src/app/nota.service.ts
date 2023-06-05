@@ -6,11 +6,12 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Mensaje } from './mensaje';
+import { environment } from 'environment';
 
 @Injectable({ providedIn: 'root' })
 export class NotaService {
 
-  private notasUrl = '/api/notas';  // URL to web api
+  private notasUrl = "/api/notas";  // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 

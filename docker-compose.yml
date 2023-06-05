@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    platform: linux/amd64
+    restart: always
+    ports:
+      - '4200:4200'
+    networks:
+      - mynet
+  db:
+    image: postgres:latest
+    restart: always
+    hostname: postgres
+    container_name: db
+    networks:
+      - mynet
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - db:/var/lib/postgresql/data
+  backend:
+    hostname: backend
+    build: ./backend
+    platform: linux/amd64
+    restart: always
+    networks:
+      - mynet
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+volumes:
+  db:
+    driver: local
+networks:
+  mynet:
+    name: my-shared-db-network
