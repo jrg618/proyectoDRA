@@ -12,6 +12,8 @@ COPY . /app
 
 RUN npm run build --env=prod
 
-EXPOSE 4200
+FROM nginx:1.21.6
 
-CMD ["npm", "start"]
+COPY --from=build-step /app/dist/gymbros-angular /usr/share/nginx/html
+
+EXPOSE 4200
